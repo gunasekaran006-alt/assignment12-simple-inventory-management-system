@@ -19,6 +19,8 @@ const writeData = (data) => {
     fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), 'utf8');
 };
 
+// --- API Endpoints ---
+
 // 1. GET Method: Display all products
 app.get('/getProducts', (req, res) => {
     try {
@@ -63,7 +65,7 @@ app.delete('/deleteProduct/:id', (req, res) => {
     }
 });
 
-// 4. UPDATE Method: Update the description of a product
+// 4. PUT: UPDATE Method: Update the description of a product
 // Using req.params for ID and req.body for new description
 app.put('/updateProduct/:id', (req, res) => {
     try {
